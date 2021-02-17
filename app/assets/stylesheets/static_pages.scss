@@ -1,3 +1,43 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@media screen and (max-width: 767px) {
+    .search_line{
+        display: none;
+    }    
+}
+
+.logout_icon{
+    font-size: 3rem;
+    color: white;
+
+}
+
+.main_logo{
+    font-size: 2rem;
+    transition: 1s;
+}
+
+.nav-item{
+    font-size: 1.3rem;
+    transition: 400ms;
+}
+
+
+.dropdown_link:hover{
+    color: rgb(184, 184, 184)  !important;
+}
+
+.dropdown_link{
+    font-size: 1.3rem !important;
+    transition: 400ms;
+}
+
+.dropdown-item{
+    color: aliceblue;
+}
+
+.top_bar_text{
+    font-family: 'Lemonada','Times New Roman', Times, serif;
+}

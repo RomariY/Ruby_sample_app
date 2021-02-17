@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="pl-2">
-        <%= link_to'Test', root_path, class: "navbar-brand  border rounded font-weight-bold  shadow-lg p-2 bg-dark"%>
+        <%= link_to 'Test', root_path, class: "main_logo navbar-brand rounded font-weight-bold bg-dark"%>
     </div>
    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,17 +8,28 @@
     </button>
     <div class="collapse navbar-collapse pl-4 justify-content-between" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <%= link_to 'Add friend', static_pages_news_path, class: 'nav-item nav-link active h5 ml-4'%>
-            <%= link_to 'About Us' , static_pages_about_path, class: 'nav-item nav-link h5 ml-4'%>
-            <%= link_to 'Help', static_pages_help_path, class:'nav-item nav-link h5 ml-4'%>
-
+            <li class="nav-item dropdown ml-4">
+                <a class="top_bar_text dropdown_link nav-link active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Friends
+                </a>
+                <div class="dropdown-menu bg-dark " aria-labelledby="navbarDropdownMenuLink">
+                    <%= link_to 'Friends', friends_path, class: "top_bar_text dropdown-item"%>
+                    <%= link_to 'Add new friend', new_friend_path, class: "top_bar_text dropdown-item"%>
+                    <a class="top_bar_text dropdown-item" href="#">Something else here</a>
+                </div>  
+            </li>
+            <%= link_to 'News', static_pages_news_path, class: 'top_bar_text add_f nav-item nav-link ml-4'%>
+            <%= link_to 'About Us' , static_pages_about_path, class: 'top_bar_text nav-item nav-link ml-4'%>
+            <%= link_to 'Help', static_pages_help_path, class:'top_bar_text nav-item nav-link ml-4'%>
+            
         </div>
+        
         <div class = "search_line">
             <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
-
+        
     </div>
 </nav>
