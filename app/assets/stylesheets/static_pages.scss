@@ -8,7 +8,18 @@
     }    
 }
 
-.logout_icon{
+body{
+    font-family: 'Newsreader', 'Times New Roman', Times, serif;
+    
+}
+
+.dropdown-menu{
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+}
+
+
+.logout_btn{
     font-size: 3rem;
     color: white;
 
@@ -40,4 +51,12 @@
 
 .top_bar_text{
     font-family: 'Lemonada','Times New Roman', Times, serif;
+}
+
+.friend_h1{
+    font-family: 'Montserrat', 'Times New Roman', Times, serif;
+}
+
+.log_field{
+    width: 30% !important;
 }
