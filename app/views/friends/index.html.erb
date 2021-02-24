@@ -1,35 +1,42 @@
 
-<h1 class = "friend_h1">Friends</h1>
+<% if user_signed_in? %>
 
-<table class="table table-striped border border-dark table-hover">
-  <thead class="table_align thead-dark">
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  
-  <tbody>
-    <% @friends.each do |friend| %>
-      <% if friend.user == current_user %>
-        <tr class="table_align" >
-          <td><%= friend.first_name %></td>
-          <td><%= friend.last_name %></td>
-          <td><%= friend.email %></td>
-          <td><%= friend.phone %></td>
-          <td><%= link_to 'Show', friend, class: "btn btn-secondary" %></td>
-          <td><%= link_to 'Edit', edit_friend_path(friend), class: "btn btn-dark" %></td>
-          <td><%= link_to 'Destroy', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-        </tr>
+  <h1 class = "friend_h1">Friends</h1>
+
+  <table class="table table-striped border border-dark table-hover">
+    <thead class="table_align thead-dark">
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @friends.each do |friend| %>
+        <% if friend.user == current_user %>
+          <tr class="table_align" >
+            <td><%= friend.first_name %></td>
+            <td><%= friend.last_name %></td>
+            <td><%= friend.email %></td>
+            <td><%= friend.phone %></td>
+            <td><%= link_to 'Show', friend, class: "btn btn-secondary" %></td>
+            <td><%= link_to 'Edit', edit_friend_path(friend), class: "btn btn-dark" %></td>
+            <td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+          </tr>
+        <% end %>
       <% end %>
-    <% end %>
-  </tbody>
-  
-</table>
+    </tbody>
+    
+  </table>
 
-<br/>
+  <br/>
 
-<%= link_to 'New Friend', new_friend_path, class: "new-btn btn btn-outline-success" %>
+  <%= link_to 'New Friend', new_friend_path, class: "new-btn btn btn-outline-success" %>
+<% else %>
+  <h1>Hello World!</h1>
+  <p>Home page</p>
+  <p>Find me in app/views/static_pages/home.html.erb</p>
+<% end %>

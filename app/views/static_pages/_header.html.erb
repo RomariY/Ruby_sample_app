@@ -20,6 +20,11 @@
                 </div>  
             </li>
         <% end %>
+            <% if user_signed_in? %>
+                <%= link_to 'Home', static_pages_home_path, class: 'top_bar_text add_f nav-item nav-link ml-4'%>
+            <% else %>
+                <%= link_to 'Home', static_pages_home_path, class: 'top_bar_text add_f nav-item nav-link ml-4 active'%>
+            <% end %>
             <%= link_to 'News', static_pages_news_path, class: 'top_bar_text add_f nav-item nav-link ml-4'%>
             <%= link_to 'About Us' , static_pages_about_path, class: 'top_bar_text nav-item nav-link ml-4'%>
             <%= link_to 'Help', static_pages_help_path, class:'top_bar_text nav-item nav-link ml-4'%>
