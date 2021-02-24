@@ -9,16 +9,8 @@
     <div class="collapse navbar-collapse pl-4 justify-content-between" id="navbarNavAltMarkup">
         <div class="navbar-nav">
         <% if user_signed_in? %>
-            <li class="nav-item dropdown ml-4">
-                <a class="top_bar_text dropdown_link nav-link active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Friends
-                </a>
-                <div class="dropdown-menu bg-dark " aria-labelledby="navbarDropdownMenuLink">
-                    <%= link_to 'Friends', friends_path, class: "top_bar_text dropdown-item"%>
-                    <%= link_to 'Add new friend', new_friend_path, class: "top_bar_text dropdown-item"%>
-                    <a class="top_bar_text dropdown-item" href="#">Something else here</a>
-                </div>  
-            </li>
+            <%= link_to 'Friends', friends_path, class: "top_bar_text add_f nav-item nav-link ml-4 active"%>
+            <%= link_to 'Add new friend', new_friend_path, class: "top_bar_text add_f nav-item nav-link ml-4"%>
         <% end %>
             <% if user_signed_in? %>
                 <%= link_to 'Home', static_pages_home_path, class: 'top_bar_text add_f nav-item nav-link ml-4'%>
