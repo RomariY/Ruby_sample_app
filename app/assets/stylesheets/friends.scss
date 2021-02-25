@@ -22,14 +22,32 @@
     width: 35%;
 }
 
+.col_th{
+    column-count: 3;
+}
+
+.d_button{
+    width: 8rem !important;
+}
+
 @media screen and (max-width: 767px) {
     .search_line{
         display: none;
-    }    
+    }   
+
     .log_field{
         width: 100% !important;
     }
+
     .card{
         width: 100%;
+    }
+
+    .hidden_el{
+        display: none;
+    }
+
+    .col_th{
+        column-span: 2;
     }
 }
