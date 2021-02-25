@@ -7,7 +7,7 @@ ruby '3.0.0'
 gem 'rexml'
 
 gem 'rails', '~> 6.1.1'
-gem 'sqlite3', '~> 1.4'
+
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
@@ -34,7 +34,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg','0.17.1'
+  gem 'pg', '~> 1.2', '>= 1.2.3'
   gem 'rails_12factor', '0.0.2'
 end
 
