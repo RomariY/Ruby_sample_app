@@ -20,15 +20,7 @@
             <%= link_to 'News', static_pages_news_path, class: 'top_bar_text add_f nav-item nav-link ml-4'%>
             <%= link_to 'About Us' , static_pages_about_path, class: 'top_bar_text nav-item nav-link ml-4'%>
             <%= link_to 'Help', static_pages_help_path, class:'top_bar_text nav-item nav-link ml-4'%>
-
-            <% if user_signed_in? %>
-                <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "top_bar_text nav-item nav-link ml-4"%>
-                <%= link_to 'Edit Profile', edit_user_registration_path, class: "top_bar_text nav-item nav-link ml-4"%>
-            <% else %>
-                <%= link_to 'Sign Up', new_user_registration_path, class: "top_bar_text nav-item nav-link ml-4"%>
-                <%= link_to 'Sign In', new_user_session_path, class: "top_bar_text nav-item nav-link ml-4"%>
-            <% end %>
-
+           
             <%# session password: qUWTP6UWJSmYGyg %>
             
             
@@ -40,16 +32,14 @@
                     <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
-            <div class="nav-item dropdown mr-1">
-                
-                <a class="logout_btn dropdown_link  nav-link active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="fas fa-sign-out-alt"></span>
-                    LogOut
-                </a>
-                <div class="dropdown-menu bg-dark " aria-labelledby="navbarDropdownMenuLink">
-                    
-                    <a class="top_bar_text dropdown-item" href="#">Something else here</a>
-                </div>  
+            <div class="navbar-nav mr-1">
+            <% if user_signed_in? %>
+                <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "top_bar_text nav-item nav-link ml-4"%>
+                <%= link_to 'Edit Profile', edit_user_registration_path, class: "top_bar_text nav-item nav-link ml-4"%>
+            <% else %> 
+                <%= link_to 'Sign Up', new_user_registration_path, class: " top_bar_text nav-item nav-link ml-4"%>
+                <%= link_to 'Sign In', new_user_session_path, class: "top_bar_text nav-item nav-link ml-4"%>
+            <% end %>
             </div>
         </div>
         
